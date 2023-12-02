@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en" ng-app="Dashboard">
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Niall Cloud Dev</title>
+
+      <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+      <script type="text/javascript" src="JS/bootstrap.js"></script>
+      <script type="text/javascript" src="JS/bootstrap.bundle.min.js"></script>
+      <script type="text/javascript" src="JS/jquery-3.6.0.min.js"></script>
+
+      <script type="text/javascript" src="JS/app.js"></script>
+
+  </head>
+  
+  <body style="background-color: #272727;">
+
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="" method="post" style="background-color:#f1f1f1; width:350px;">
+    <div class="col-3" style="background-color:#f1f1f1">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" width='200' style="padding:20px;">
+    </div>
+
+    <div class="col-9" style="padding:20px; background-color:#f1f1f1">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" id="uname" name="uname" required>
+      <br>
+      <br>
+      <label for="psw"><b>Password  </b></label>
+      <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+      <br>
+      <br>
+
+      <button  id = "retUser" type="button" class="btn btn-primary" onclick="document.getElementById('id01').style.display='none'">Login</button>
+
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-primary">Cancel</button>
+
+    </div>
+
+  </form>
+</div>
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="" method="post" style="background-color:#f1f1f1; width:350px;">
+    <div class="col-3" style="background-color:#f1f1f1">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" width='200' style="padding:20px;">
+    </div>
+
+    <div class="col-9" style="padding:20px; background-color:#f1f1f1">
+      <label for="emailreg"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" id="emailreg" name="emailreg" required>
+      <br>
+      <br>
+      <label for="unamereg"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" id="unamereg" name="unamereg" required>
+      <br>
+      <br>
+      <label for="pswreg"><b>Password </b></label>
+      <input type="password" placeholder="Enter Password" id="pswreg" name="pswreg" required>
+      <br>
+      <label for="pswregconfirm"><b>Confirm Password </b></label>
+      <input type="password" placeholder="Enter Password" id="pswregconfirm" name="pswregconfirm" required>
+      <br>
+      <br>
+
+      <button  id = "subNewUser" type="button" class="btn btn-primary" onclick="document.getElementById('id02').style.display='none'">Register</button>
+
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="btn btn-primary">Cancel</button>
+
+    </div>
+
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+var modal2 = document.getElementById('id02');
+
+window.onclick = function(event) {
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
+</script>
+    <div class="container" style="background-color: #ffffff;">
+      <div style="padding-top: 15px;">
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="btn btn-primary" id="mainloginbtn">Login</button>
+        <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" class="btn btn-primary" id="mainregbtn">Register</button>
+        </div>
+        <!--Header-->
+        <div class="row align-items-start">
+            <div class="col-2"  ></div>
+
+            <div class="col-8" style="text-align: center;">
+              <h2>Media Share</h2>
+            </div>
+
+
+            <div class="col-2"  ></div>
+        </div>
+        <div id="UserWelcome">
+
+        </div>
+        <div id="UserRegistered">
+
+        </div>
+        <!--New Asset Box-->
+        <div class="row align-items-start">
+            <div class="col-2"  ></div>
+
+            <div class="col-8" style="text-align: left;border-bottom:1px solid #222222;">
+
+              <form style="font-size: 10pt;" id="newAssetForm">
+                <div class="mb-3">
+                  <label for="FileName" class="form-label"><h5>Name</h5> </label>
+                  <input type="text" class="form-control" id="FileName">
+                </div>
+
+                <div class="mb-3">
+                  <label for="userID" class="form-label"><h5>User Id</h5></label>
+                  <input type="string" class="form-control" id="userIDBox">
+                </div>
+
+                <div class="mb-3">
+                  <label for="userName" class="form-label"><h5>User Name</h5></label>
+                  <input type="text" class="form-control" id="userNameBox">
+                </div>
+
+                <div class="mb-3">
+                  <label for="UpFile" class="form-label"><h5>File to Upload</h5></label>
+                  <input type="file" class="form-control" id="UpFile">
+                </div>
+            
+                <button type="button" id="subNewForm" class="btn btn-primary">Submit</button> <br/><br/>
+                
+              </form>
+            </div>
+
+            <div id="UploadSuccess">
+
+            </div>
+
+            <div class="col-2"  ></div>
+        </div>
+
+        <!-- view Asset Area-->
+        <div class="row align-items-start">
+            <div class="col-2"  ></div>
+
+            <div class="col-6" style="text-align: left;" >
+              <div style="padding:5px;">
+                <button  id = "retImages" type="button" class="btn btn-primary">View Media</button>
+              </div>
+
+              <div id="ImageList">
+
+
+              </div>
+
+            </div>
+
+            <div class="col-2"  ></div>
+        </div>
+
+    </div>
+  
+  </body>
+</html>
